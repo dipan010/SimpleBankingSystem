@@ -13,7 +13,5 @@ def customers(request):
 
 def transactions(request):
     transactions = Transactions.objects.all().order_by('-id')
-    #query_set = Transactions.objects.order_by('-id')
-    
     return render(request,'banktransfers/transactions.html',context={'transactions':transactions})
 
