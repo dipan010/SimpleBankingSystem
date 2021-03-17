@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from banktransfers import views
+from django.conf.urls import serve
+from django.views.static import static
+
 
 urlpatterns = [
     path('',views.index,name='index'),
     path('customers',views.customers,name='customers'),
     path('transactions',views.transactions,name='transactions'),
     path('transfer/<int:cust_id>',views.transfer,name='transfer'),
+    
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':  settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]
