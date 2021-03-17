@@ -45,7 +45,7 @@
     <h3>Money Transfer Form</h3>
     <br>
     <form method="post" class='row'>
-
+        {% csrf_token %}
         <div class="form-row" id="form">
             <form method="post" class='form-inline' align="center" id="form">
                 <p class="p1"><label for="id_from_field">Sender:</label>
