@@ -1,9 +1,6 @@
 <html>
 {% load static %}
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
-<br><br>
 
 <body>
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
@@ -20,27 +17,20 @@
             </tr>
         </thead>
         <tbody>
-            {% for c in customers %}
+            {% for customer in customers %}
             <tr>
-
-                <td>{{c.id}}</td>
-                <td>{{c.name}}</td>
-                <td>{{c.email}}</td>
-                <td>{{c.balance}}</td>
-
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.balance }}</td>
                 <td>
-
-                    <a href="{% url 'transfer' cust_id=c.id %}">
-                        <button type="submit" class="btn btn-primary">Transfer</button></td>
+                    <a href="{% url 'transfer' cust_id=customer.id %}">
+                        <button type="submit" class="btn transfer">Transfer</button></td>
                 </a>
             </tr>
             {% endfor %}
-
         </tbody>
     </table>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
 </body>
-<br><br><br><br><br><br>
 
 </html>
