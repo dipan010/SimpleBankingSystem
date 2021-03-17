@@ -1,0 +1,46 @@
+<html>
+{% load static %}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+<br><br>
+
+<body>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <h3>Our Valuable Customers</h3>
+
+    <table class="table table-bordered text-center table-striped table-light " id="tble">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Balance(₹)</th>
+                <th scope="col">Transfer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in customers %}
+            <tr>
+
+                <td>{{c.id}}</td>
+                <td>{{c.name}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.balance}}</td>
+
+                <td>
+
+                    <a href="{% url 'transfer' cust_id=c.id %}">
+                        <button type="submit" class="btn btn-primary">Transfer</button></td>
+                </a>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</body>
+<br><br><br><br><br><br> {% endblock %}
+
+</html>
