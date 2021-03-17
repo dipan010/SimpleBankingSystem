@@ -1,0 +1,76 @@
+{% load static %}
+
+<title>Amount Transfer</title>
+
+
+
+<body class="b1">
+    <br>
+    <br> {%if messages%} {%for message in messages%}
+    <div class="alert alert-dismissible alert-warning" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %} {% endif %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <h3>Customer Details</h3>
+    <br>
+    <link href="css/styles.css" rel="stylesheet">
+    <table class="table table-bordered text-center table-striped table-light ">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+
+                <td>{{cust_info.id}}</td>
+                <td>{{cust_info.name}}</td>
+                <td>{{cust_info.email}}</td>
+                <td>{{cust_info.balance}}</td>
+
+
+
+            </tr>
+
+        </tbody>
+    </table>
+    <br>
+    <h3>Money Transfer Form</h3>
+    <br>
+    <form method="post" class='row'>
+
+        <div class="form-row" id="form">
+            <form method="post" class='form-inline' align="center" id="form">
+                <p class="p1"><label for="id_from_field">Sender:</label>
+                    <select name="from_field" required id="id_from_field" class="input1" style="justify-content:center">
+  <option value="{{cust_info.id}}" id="input" selected>{{cust_info}} </option>
+
+  
+
+</select>
+                    <label for="id_to_field" class="label1">Receiver:</label> <select name="to_field" class="input2" required id="id_to_field">
+    <option value="" selected>Select</option>
+    {% for c  in customers %}
+        {% if c != cust_info %}
+            <option value="{{c.id}}">{{c}}</option>
+
+        {% endif %}
+    {% endfor %}
+
+</select></p>
+                <br>
+                <p><label for="id_amount" class="p2">Amount:</label> <input type="number" name="amount" min="1" placeholder="Enter Amount.." class="input3" required id="id_amount"></p>
+                <br>
+                <p class="c"><button type="submit" class="btn btn-primary col-lg-2" id="button">Transfer Money</button></p>
+            </form>
+        </div>
+        <br><br><br><br><br><br>
+
+</body>
