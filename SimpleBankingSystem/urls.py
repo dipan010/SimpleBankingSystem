@@ -26,6 +26,4 @@ urlpatterns = [
     path('transactions',views.transactions,name='transactions'),
     path('transfer/<int:cust_id>',views.transfer,name='transfer'),
     
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':  settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]
