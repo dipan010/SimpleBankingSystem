@@ -16,9 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from banktransfers import views
-from django.conf.urls import serve
-from django.views.static import static
-
 
 urlpatterns = [
     path('',views.index,name='index'),
