@@ -17,33 +17,36 @@
 
 <body>
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
-    <h3>Our Valuable Customers</h3>
 
-    <table class="table table-bordered text-center table-striped table-light " id="tble">
-        <thead class="table-dark">
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Balance(₹)</th>
-                <th scope="col">Transfer</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for customer in customers %}
-            <tr>
-                <td>{{ customer.id }}</td>
-                <td>{{ customer.name }}</td>
-                <td>{{ customer.email }}</td>
-                <td>{{ customer.balance }}</td>
-                <td>
-                    <a href="{% url 'transfer' cust_id=customer.id %}">
-                        <button type="submit" class="btn transfer">Transfer</button></td>
-                </a>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        <br>
+        <h3>Our Valuable Customers</h3>
+        <table class="table table-bordered text-center table-striped table-light " id="tble">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Balance(₹)</th>
+                    <th scope="col">Transfer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.balance }}</td>
+                    <td>
+                        <a href="{% url 'transfer' cust_id=customer.id %}">
+                            <button type="submit" class="btn transfer">Transfer</button></td>
+                    </a>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>

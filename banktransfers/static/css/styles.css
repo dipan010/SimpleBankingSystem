@@ -1,5 +1,5 @@
 body {
-    color: white
+    background: #242424;
 }
 
 ul {
@@ -58,10 +58,6 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-body {
-    background: #242424;
 }
 
 .delete_this {
