@@ -80,15 +80,16 @@ WSGI_APPLICATION = 'SimpleBankingSystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  
+'OPTIONS': {
+            'read_default_file': '/path/to/my.cnf',
+        },
         'NAME': 'transactiondb',  
         'USER':'root',  
         'PASSWORD':'QL2020db',  
         'HOST':'localhost',  
         'PORT':'3306'  
     },
-'OPTIONS': {
-            'read_default_file': '/path/to/my.cnf',
-        },
+
 }
 
 
