@@ -81,9 +81,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'transactiondb',  
-        'USER':'root',  
-        'PASSWORD':'QL2020db',  
-        'HOST':'localhost',  
+        'USER':'****',  
+        'PASSWORD':'****',  
+        'HOST':'***',  
         'PORT':'3306'  
     }
 }
