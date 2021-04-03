@@ -80,12 +80,16 @@ WSGI_APPLICATION = 'SimpleBankingSystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  
+'OPTIONS': {
+            'read_default_file': '/path/to/my.cnf',
+        },
         'NAME': 'transactiondb',  
         'USER':'****',  
         'PASSWORD':'****',  
         'HOST':'***',  
         'PORT':'3306'  
-    }
+    },
+
 }
 
 
